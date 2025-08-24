@@ -17,9 +17,14 @@ const addTask =()=> { //what is arrow func
 
 }
 
+const deleteTask = (index)=>{
+    tasks.splice(index, 1);
+    updateTaskList()
+}
+
 const toggleTaskComp = (index) =>{
-    tasks[index].completed = !tasks[index].completed;
-    console.log(tasks)
+    tasks[index].completed = !tasks[index].completed;  
+    updateTaskList()
 }
 
 const updateTaskList =()=> {
@@ -38,7 +43,7 @@ const updateTaskList =()=> {
                 <p> ${task.text} </p>
             </div>
             <div class = "icon">
-                <img src="./bin.png" onclick="deleteTask${index}">
+                <img src="./bin.png" onClick="deleteTask(${index})">
             </div>
         </div>
         `;
