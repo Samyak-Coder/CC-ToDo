@@ -11,7 +11,7 @@ html, body{
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(120deg, #c6a575 , #5b3a1f , #050a30);
+    background: linear-gradient(120deg, #f2c879 15%, #a60530 , #2b1c14);
     padding: 10px;
 }
 
@@ -108,4 +108,5 @@ button{
     text-decoration: line-through;
     color: teal;    
 }
+
 
