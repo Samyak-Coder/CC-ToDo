@@ -1,16 +1,13 @@
-
 let tasks = [];
-
-
 
 
 const addTask =()=> { //what is arrow func
     const taskInput = document.getElementById("input-box")
-    const text = taskInput.value//wth is trim
+    const text = taskInput.value.trim()//wth is trim
     
     if(text){
         tasks.push({text: text, completed: false})
-        
+        taskInput.value = ''
         updateTaskList()
     }
     console.log(tasks)
@@ -25,6 +22,14 @@ const deleteTask = (index)=>{
 const toggleTaskComp = (index) =>{
     tasks[index].completed = !tasks[index].completed;  
     updateTaskList()
+}
+
+const editTask = (index) => {
+    const taskInput = document.getElementById("input-box");
+    taskInput.value = tasks[index].text ;   
+
+    tasks.splice(index, 1);
+    updateTaskList();
 }
 
 const updateTaskList =()=> {
@@ -44,6 +49,7 @@ const updateTaskList =()=> {
             </div>
             <div class = "icon">
                 <img src="./bin.png" onClick="deleteTask(${index})">
+                <img src="./edit.png" onClick="editTask(${index})">
             </div>
         </div>
         `;
